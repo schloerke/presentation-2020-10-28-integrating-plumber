@@ -1,32 +1,35 @@
-# `plumber` + `future`: Async Web APIs
+# Expanding R Horizons: Integrating R with Plumber APIs
 
-<table style="margin:0px">
-  <tr>
-    <td><a href="https://www.rplumber.io/"><img src="images/plumber.png" height="100px" style="padding: 10px;"></a></td>
-    <td vlign="center">+</td>
-    <td><a href="https://github.com/HenrikBengtsson/future"><img src="images/future.20200115.1200dpi.png" height="100px" style="padding: 10px;"></a></td>
-  </tr>
-</table>
+Talk given by James Blair and Barret Schloerke at RStudio Webinar, 2020-10-28.
+
+Video: [James Blair & Barret Schloerke | Integrating R with Plumber APIs | RStudio (2020)](https://opensource.posit.co/resources/videos/2021-03-01_james-blair-barret-schloerke-integrating-r-with-plumber-apis-rstudio-2020/)
 
 ## Slides
 
-* HTML: http://schloerke.com/presentation-2021-01-rstudio-global-plumber-async
+* PDF: [presentation-2020-10-30-integrating-plumber.pdf](presentation-2020-10-30-integrating-plumber.pdf)
 
-* PDF: http://schloerke.com/presentation-2021-01-rstudio-global-plumber-async/plumber_future.pdf
+## Demo APIs
 
+Example `plumber` APIs used throughout the talk, in [`plumber/`](plumber):
 
-## Resources for learning more
-
-* [`plumber` webpage](https://www.rplumber.io/)
-  * An API Generator for R
-
-* [`future` webpage](https://github.com/HenrikBengtsson/future)
-  * Unified Parallel and Distributed Processing in R for Everyone
-
-* [`promises` webpage](https://rstudio.github.io/promises/)
-  * Abstractions for Promise-Based Asynchronous Programming
-
+* [`plumber-penguin.R`](plumber/plumber-penguin.R) — end-to-end Palmer Penguins species prediction API
+* [`plumber-sync.R`](plumber/plumber-sync.R) — synchronous API example
+* [`plumber-future.R`](plumber/plumber-future.R), [`plumber-future-2.R`](plumber/plumber-future-2.R), [`plumber-future-full.R`](plumber/plumber-future-full.R) — async execution with `future`
+* [`plumber-future-pkg-example.R`](plumber/plumber-future-pkg-example.R) — async example packaged as a plumber router
+* [`fib.R`](plumber/fib.R), [`calc.R`](plumber/calc.R) — basic route examples
+* [`pipe/entrypoint.R`](plumber/pipe/entrypoint.R), [`rapidoc/entrypoint.R`](plumber/rapidoc/entrypoint.R) — router entrypoints, including RapiDoc-based docs
 
 ## Abstract
 
-`plumber` is an R package that allows users to create web APIs by decorating R functions using `roxygen2`-like comments. In the latest release, asynchronous code (using `future` or `promises`) may be inserted at any stage of a `plumber` route execution, enabling parallel processing using multiple workers. In this talk, I will go through how you can set up your own asynchronous `plumber` API to leverage your full computing potential.
+In this webinar we focus on using the `plumber` package as a tool for integrating R with other frameworks and technologies. `plumber` is a package that converts your existing R code to a web API using unique one-line comments. Example use cases are used to demonstrate the power of APIs in data science and to highlight new features of the `plumber` package. Finally, we look at methods for deploying `plumber` APIs to make them widely accessible.
+
+## Resources
+
+* [`plumber` webpage](https://www.rplumber.io/)
+* [`plumber` on GitHub](https://github.com/rstudio/plumber)
+* [`plumberExamples`](https://github.com/sol-eng/plumberExamples)
+* [`plumberDeploy`](https://github.com/meztez/plumberDeploy)
+* [`rapidoc`](https://github.com/meztez/rapidoc)
+* [RStudio webinars](https://github.com/rstudio/webinars)
+* [RStudio Community — plumber tag](https://community.rstudio.com/tag/plumber)
+* [rstudio.com/conference](https://rstudio.com/conference/)
